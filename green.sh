@@ -10,7 +10,7 @@ sleep 0.5
 
 CEKEXPIRED() {
     today=$(date -d "+1 day" "+%Y-%m-%d")
-    Exp1=$(curl -sS https://raw.githubusercontent.com/arismaramar/izin/main/ip | grep $MYIP | awk '{print $3}')
+    Exp1=$(curl -sS https://raw.githubusercontent.com/amahman/lol/main/ip | grep $MYIP | awk '{print $3}')
     if [[ $today < $Exp1 ]]; then
         echo -e "Status script aktif."
     else
@@ -18,7 +18,7 @@ CEKEXPIRED() {
         exit 0
     fi
 }
-IZIN=$(curl -sS https://raw.githubusercontent.com/arismaramar/izin/main/ip | awk '{print $4}' | grep $MYIP)
+IZIN=$(curl -sS https://raw.githubusercontent.com/amahman/lol/main/ip | awk '{print $4}' | grep $MYIP)
 if [ $MYIP = $IZIN ]; then
 echo "IZIN DI TERIMA!!"
 else
@@ -57,7 +57,7 @@ echo "IP=" >> /var/lib/scrz-prem/ipvps.conf
 
 sudo apt install vnstat
 sudo apt insta squid
-wget -q -O https://raw.githubusercontent.com/arismaramar/ssset/master/tools.sh && chmod +x tools.sh && ./tools.sh
+wget -q -O https://raw.githubusercontent.com/amahman/lol/main/tools.sh && chmod +x tools.sh && ./tools.sh
 rm tools.sh
 clear
 
@@ -85,10 +85,10 @@ echo -e "$green      Install SSH / WS / UDP              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 clear
-curl "https://raw.githubusercontent.com/arismaramar/ssset/master/menu/ssh-vpn.sh" | bash
+curl "https://raw.githubusercontent.com/amahman/lol/main/menu/ssh-vpn.sh" | bash
 sleep 2
-wget https://raw.githubusercontent.com/arismaramar/ssset/master/nginx-ssl.sh && chmod +x nginx-ssl.sh && ./nginx-ssl.sh
-wget -q -O demeling.sh https://raw.githubusercontent.com/arismaramar/ssset/master/demeling.sh && chmod +x demeling.sh && ./demeling.sh
+wget https://raw.githubusercontent.com/amahman/lol/main/nginx-ssl.sh && chmod +x nginx-ssl.sh && ./nginx-ssl.sh
+wget -q -O demeling.sh https://raw.githubusercontent.com/amahman/lol/main/demeling.sh && chmod +x demeling.sh && ./demeling.sh
 
 
 
@@ -155,14 +155,14 @@ echo -e "$green      Install Websocket              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 clear
-curl "https://raw.githubusercontent.com/arismaramar/ssset/master/Insshws/insshws.sh" | bash
+curl "https://raw.githubusercontent.com/amahman/lol/main/Insshws/insshws.sh" | bash
 
 #exp
 cd /usr/bin
-wget -O xp "https://raw.githubusercontent.com/arismaramar/ssset/master/menu/xp.sh"
+wget -O xp "https://raw.githubusercontent.com/amahman/lol/main/menu/xp.sh"
 chmod +x xp
 sleep 1
-wget -q -O /usr/bin/notramcpu "https://raw.githubusercontent.com/arismaramar/ssset/master/Finaleuy/notramcpu" && chmod +x /usr/bin/notramcpu
+wget -q -O /usr/bin/notramcpu "https://raw.githubusercontent.com/amahman/lol/main/Finaleuy/notramcpu" && chmod +x /usr/bin/notramcpu
 
 cd
 #remove log 
@@ -177,10 +177,10 @@ echo -e "$green      Install ALL XRAY               $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 
-curl "https://raw.githubusercontent.com/arismaramar/ssset/master/menu/insray.sh" | bash
+curl "https://raw.githubusercontent.com/amahman/lol/main/menu/insray.sh" | bash
 sleep 1
 
-curl "https://raw.githubusercontent.com/arismaramar/ssset/master/arca.sh" | bash
+curl "https://raw.githubusercontent.com/amahman/lol/main/arca.sh" | bash
 sleep 1
 #install slowdns
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -211,16 +211,16 @@ echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━�
 echo -e "$green      Install OPENVPN             $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 
-wget "https://raw.githubusercontent.com/arismaramar/ssset/master/Insshws/vpn.sh" && bash vpn.sh && rm vpn.sh
+wget "https://raw.githubusercontent.com/amahman/lol/main/Insshws/vpn.sh" && bash vpn.sh && rm vpn.sh
 clear
 echo "Installing Bot Panel" | lolcat
 echo "Siapkan Token bot dan ID telegram mu"
-rm -rf bot.sh && wget https://raw.githubusercontent.com/arismaramar/ssset/master/botssh/bot.sh && chmod 777 bot.sh && ./bot.sh && systemctl restart cybervpn
+rm -rf bot.sh && wget https://raw.githubusercontent.com/amahman/lol/main/botssh/bot.sh && chmod 777 bot.sh && ./bot.sh && systemctl restart cybervpn
 
 # pemberitahuan
 
-USERID=1423578532
-KEY="5973249718:AAEQEcWIjxwTMylzckC1letVvxwSYRRNepU"
+USERID=14235752
+KEY="59732418:AAEQEcWIjxwTMylzckC1letVvxwSYRRNepU"
 TIMEOUT="10"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 DATE_EXEC="$(date "+%d %b %Y %H:%M")"
