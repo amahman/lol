@@ -148,25 +148,25 @@ wget -q -O /usr/bin/delss "https://raw.githubusercontent.com/amahman/lol/main/bo
 wget -q -O /usr/bin/renew-ss "https://raw.githubusercontent.com/amahman/lol/main/botssh/renew-ss.sh" && chmod +x /usr/bin/renew-ss
 
 
-wget -q -O /usr/bin/renewtr "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/renewtr.sh" && chmod +x /usr/bin/renewtr
+wget -q -O /usr/bin/renewtr "https://raw.githubusercontent.com/amahman/lol/main/botssh/renewtr.sh" && chmod +x /usr/bin/renewtr
 
 
-wget -q -O /usr/bin/renewvless "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/renewvless.sh" && chmod +x /usr/bin/renewvless
+wget -q -O /usr/bin/renewvless "https://raw.githubusercontent.com/amahman/lol/main/botssh/renewvless.sh" && chmod +x /usr/bin/renewvless
 
 
-wget -q -O /usr/bin/renewws "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/renewws.sh" && chmod +x /usr/bin/renewws
+wget -q -O /usr/bin/renewws "https://raw.githubusercontent.com/amahman/lol/main/botssh/renewws.sh" && chmod +x /usr/bin/renewws
 
 
-wget -q -O /usr/bin/cek-mws "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/cek-mws.sh" && chmod +x /usr/bin/cek-mws
+wget -q -O /usr/bin/cek-mws "https://raw.githubusercontent.com/amahman/lol/main/botssh/cek-mws.sh" && chmod +x /usr/bin/cek-mws
 
-wget -q -O /usr/bin/cek-mvs "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/cek-mvs.sh" && chmod +x /usr/bin/cek-mvs
-
-
-wget -q -O /usr/bin/cek-mss "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/cek-mss.sh" && chmod +x /usr/bin/cek-mss
+wget -q -O /usr/bin/cek-mvs "https://raw.githubusercontent.com/amahman/lol/main/botssh/cek-mvs.sh" && chmod +x /usr/bin/cek-mvs
 
 
+wget -q -O /usr/bin/cek-mss "https://raw.githubusercontent.com/amahman/lol/main/botssh/cek-mss.sh" && chmod +x /usr/bin/cek-mss
 
-wget -q -O /usr/bin/cek-mts "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/cek-mts.sh" && chmod +x /usr/bin/cek-mts
+
+
+wget -q -O /usr/bin/cek-mts "https://raw.githubusercontent.com/amahman/lol/main/botssh/cek-mts.sh" && chmod +x /usr/bin/cek-mts
 
 cp /tmp/var.txt /media/cybervpn
 
