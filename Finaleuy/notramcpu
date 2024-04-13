@@ -1,7 +1,7 @@
 #!/bin/bash
 domain=$(cat /etc/xray/domain)
-token = https://api.telegram.org/bot5973249718:AAEQEcWIjxwTMylzckC1letVvxwSYRRNepU/sendMessage
-chatid=1423578532
+token = https://api.telegram.org/bot5973248:AAEQEcWIjxwTMylzckC1letVvxwSYRRNepU/sendMessage
+chatid=14238532
 DATE_EXEC="$(date "+%d %b %Y %H:%M")"
 tomem="$(free | awk '{print $2}' | head -2 | tail -n 1 )"
 usmem="$(free | awk '{print $3}' | head -2 | tail -n 1 )"
