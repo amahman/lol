@@ -1,7 +1,7 @@
 #!/bin/bash
 MYIP=$(wget -qO- ipinfo.io/ip);
 
-IZIN=$(curl -sS https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/main/ip | awk '{print $4}' | grep $MYIP)
+IZIN=$(curl -sS https://raw.githubusercontent.com/amahman/lol/main/ip | awk '{print $4}' | grep $MYIP)
 if [ $MYIP = $IZIN ]; then
 echo "IZIN DI TERIMA!!"
 else
@@ -19,7 +19,7 @@ apt install python3 python3-pip -y
 apt install sqlite3 -y
 cd /media/
 rm -rf cybervpn
-wget https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/cybervpn.zip
+wget https://raw.githubusercontent.com/amahman/lol/main/botssh/cybervpn.zip
 unzip cybervpn.zip
 cd cybervpn
 rm var.txt
@@ -87,65 +87,65 @@ systemctl enable cybervpn
 clear
 echo "downloading asset"
 
-wget -q -O /usr/bin/panelbot "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/panelbot.sh" && chmod +x /usr/bin/panelbot
+wget -q -O /usr/bin/panelbot "https://raw.githubusercontent.com/amahman/lol/main/botssh/panelbot.sh" && chmod +x /usr/bin/panelbot
 
 
 
 
 
-wget -q -O /usr/bin/addnoobz "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/addnoobz.sh" && chmod +x /usr/bin/addnoobz
+wget -q -O /usr/bin/addnoobz "https://raw.githubusercontent.com/amahman/lol/main/botssh/addnoobz.sh" && chmod +x /usr/bin/addnoobz
 
 
 
-wget -q -O /media/log-install.txt "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/log-install.txt"
+wget -q -O /media/log-install.txt "https://raw.githubusercontent.com/amahman/lol/main/botssh/log-install.txt"
 
 
 
-wget -q -O /usr/bin/add-vless "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/add-vless.sh" && chmod +x /usr/bin/add-vless
+wget -q -O /usr/bin/add-vless "https://raw.githubusercontent.com/amahman/lol/main/botssh/add-vless.sh" && chmod +x /usr/bin/add-vless
 
-wget -q -O /usr/bin/addtr "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/addtr.sh" && chmod +x /usr/bin/addtr
-
-
-wget -q -O /usr/bin/addws "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/addws.sh" && chmod +x /usr/bin/addws
+wget -q -O /usr/bin/addtr "https://raw.githubusercontent.com/amahman/lol/main/botssh/addtr.sh" && chmod +x /usr/bin/addtr
 
 
-wget -q -O /usr/bin/addss "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/addss.sh" && chmod +x /usr/bin/addss
-
-wget -q -O /usr/bin/cek-ssh "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/cek-ssh.sh" && chmod +x /usr/bin/cek-ssh
+wget -q -O /usr/bin/addws "https://raw.githubusercontent.com/amahman/lol/main/botssh/addws.sh" && chmod +x /usr/bin/addws
 
 
+wget -q -O /usr/bin/addss "https://raw.githubusercontent.com/amahman/lol/main/botssh/addss.sh" && chmod +x /usr/bin/addss
 
-wget -q -O /usr/bin/cek-ss "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/cek-ss.sh" && chmod +x /usr/bin/cek-ss
+wget -q -O /usr/bin/cek-ssh "https://raw.githubusercontent.com/amahman/lol/main/botssh/cek-ssh.sh" && chmod +x /usr/bin/cek-ssh
 
 
 
-
-wget -q -O /usr/bin/cek-tr "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/cek-tr.sh" && chmod +x /usr/bin/cek-tr
-
-wget -q -O /usr/bin/cek-vless "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/cek-vless.sh" && chmod +x /usr/bin/cek-vless
-
-wget -q -O /usr/bin/cek-ws "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/cek-ws.sh" && chmod +x /usr/bin/cek-ws
-
-wget -q -O /usr/bin/del-vless "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/del-vless.sh" && chmod +x /usr/bin/del-vless
+wget -q -O /usr/bin/cek-ss "https://raw.githubusercontent.com/amahman/lol/main/botssh/cek-ss.sh" && chmod +x /usr/bin/cek-ss
 
 
 
 
-wget -q -O /usr/bin/cek-noobz "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/cek-noobz.sh" && chmod +x /usr/bin/cek-noobz
+wget -q -O /usr/bin/cek-tr "https://raw.githubusercontent.com/amahman/lol/main/botssh/cek-tr.sh" && chmod +x /usr/bin/cek-tr
+
+wget -q -O /usr/bin/cek-vless "https://raw.githubusercontent.com/amahman/lol/main/botssh/cek-vless.sh" && chmod +x /usr/bin/cek-vless
+
+wget -q -O /usr/bin/cek-ws "https://raw.githubusercontent.com/amahman/lol/main/botssh/cek-ws.sh" && chmod +x /usr/bin/cek-ws
+
+wget -q -O /usr/bin/del-vless "https://raw.githubusercontent.com/amahman/lol/main/botssh/del-vless.sh" && chmod +x /usr/bin/del-vless
 
 
 
-wget -q -O /usr/bin/deltr "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/deltr.sh" && chmod +x /usr/bin/deltr
 
-wget -q -O /usr/bin/delws "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/delws.sh" && chmod +x /usr/bin/delws
-
-
-
-wget -q -O /usr/bin/delss "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/delss.sh" && chmod +x /usr/bin/delss
+wget -q -O /usr/bin/cek-noobz "https://raw.githubusercontent.com/amahman/lol/main/botssh/cek-noobz.sh" && chmod +x /usr/bin/cek-noobz
 
 
 
-wget -q -O /usr/bin/renew-ss "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/renew-ss.sh" && chmod +x /usr/bin/renew-ss
+wget -q -O /usr/bin/deltr "https://raw.githubusercontent.com/amahman/lol/main/botssh/deltr.sh" && chmod +x /usr/bin/deltr
+
+wget -q -O /usr/bin/delws "https://raw.githubusercontent.com/amahman/lol/main/botssh/delws.sh" && chmod +x /usr/bin/delws
+
+
+
+wget -q -O /usr/bin/delss "https://raw.githubusercontent.com/amahman/lol/main/botssh/delss.sh" && chmod +x /usr/bin/delss
+
+
+
+wget -q -O /usr/bin/renew-ss "https://raw.githubusercontent.com/amahman/lol/main/botssh/renew-ss.sh" && chmod +x /usr/bin/renew-ss
 
 
 wget -q -O /usr/bin/renewtr "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/renewtr.sh" && chmod +x /usr/bin/renewtr
