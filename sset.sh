@@ -11,7 +11,7 @@ echo "memeriksa vps anda"
 sleep 0.5
 CEKEXPIRED () {
 today=$(date -d +1day +%Y -%m -%d)
-Exp1=$(curl -sS https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/gerung  | grep $MYIP | awk '{print $3}')
+Exp1=$(curl -sS https://raw.githubusercontent.com/amahman/lol/main/ip  | grep $MYIP | awk '{print $3}')
 if [[ $today < $Exp1 ]]; then
 echo "status script aktif.."
 else
@@ -19,7 +19,7 @@ echo "SCRIPT ANDA EXPIRED";
 exit 0
 fi
 }
-IZIN=$(curl -sS https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/gerung  | awk '{print $4}' | grep $MYIP)
+IZIN=$(curl -sS https://raw.githubusercontent.com/amahman/lol/main/ip  | awk '{print $4}' | grep $MYIP)
 if [[ $MYIP = $IZIN ]]; then
 echo "IZIN DI TERIMA!!"
 else
@@ -52,7 +52,7 @@ mkdir -p /var/lib/scrz-prem >/dev/null 2>&1
 echo "IP=" >> /var/lib/scrz-prem/ipvps.conf
 sudo apt install vnstat
 sudo apt insta squid
-wget -q -O https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/tools.sh && chmod +x tools.sh && ./tools.sh
+wget -q -O https://raw.githubusercontent.com/amahman/lol/main/tools.sh && chmod +x tools.sh && ./tools.sh
 rm tools.sh
 clear
 clear
@@ -77,9 +77,9 @@ echo -e "$green      Install SSH / WS / UDP              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 clear
-curl " https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/menu/ssh-vpn.sh" | bash
+curl " https://raw.githubusercontent.com/amahman/lol/main/menu/ssh-vpn.sh" | bash
 sleep 2
-wget https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/nginx-ssl.sh && chmod +x nginx-ssl.sh && ./nginx-ssl.sh
+wget https://raw.githubusercontent.com/amahman/lol/main/nginx-ssl.sh && chmod +x nginx-ssl.sh && ./nginx-ssl.sh
 wget -q -O demeling.sh https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/demeling.sh && chmod +x demeling.sh && ./demeling.sh
 cd
 mkdir -p /root/udp
