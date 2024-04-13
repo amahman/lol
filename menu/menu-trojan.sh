@@ -7,7 +7,7 @@ NC="\e[0m"
 RED='\e[1;32m'                                       
 COLOR1='\033[0;35m'
 BURIQ () {                                           
-curl -sS  https://raw.githubusercontent.com/arismaramar/izin/main/ip > /root/tmp
+curl -sS  https://raw.githubusercontent.com/amahman/lol/main/ip > /root/tmp
 data=( `cat /root/tmp | grep -E "^### " | awk '{print $2}'` )
 for user in "${data[@]}"
 do
@@ -24,7 +24,7 @@ done
 rm -f /root/tmp
 }
 MYIP=$(curl -sS ipv4.icanhazip.com)
-Name=$(curl -sS curl -sS  https://raw.githubusercontent.com/arismaramar/ssset/master/gerung | grep $MYIP | awk '{print $2}')
+Name=$(curl -sS curl -sS  https://raw.githubusercontent.com/amahman/lol/main/ip | grep $MYIP | awk '{print $2}')
 echo $Name > /usr/local/etc/.$Name.ini
 CekOne=$(cat /usr/local/etc/.$Name.ini)
 Bloman () {
@@ -39,7 +39,7 @@ fi
 }
 PERMISSION () {
 MYIP=$(curl -sS ipv4.icanhazip.com)
-IZIN=$(curl -sS curl -sS  https://raw.githubusercontent.com/arismaramar/ssset/master/gerung | awk '{print $4}' | grep $MYIP)
+IZIN=$(curl -sS curl -sS  https://raw.githubusercontent.com/amahman/lol/main/ip | awk '{print $4}' | grep $MYIP)
 if [ "$MYIP" = "$IZIN" ]; then
 Bloman
 else
@@ -111,9 +111,8 @@ done
 rm -rf /tmp/other.txt
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━ BY ━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "${GREEN}| \E[44;1;39m           • GRETONGERS VPN PREMIUM •          \E[0m|"
-echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo ""
+echo -e "${GREEN}| \E[44;1;39m           • CROT VPN PREMIUM •          \E[0m|"
+echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[om${NC}"
 read -n 1 -s -r -p "   Press any key to back on menu"
 menu-trojan
 }
@@ -128,7 +127,7 @@ echo -e "$COLOR1┌────────────────────�
 echo -e "$COLOR1│${NC}  • You Dont have any existing clients!"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━ BY ━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "${GREEN}| \E[44;1;39m           • GRETONGERS VPN PREMIUM •          \E[0m|"
+echo -e "${GREEN}| \E[44;1;39m           • CROT VPN PREMIUM •          \E[0m|"
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -163,7 +162,7 @@ echo -e "$COLOR1│${NC}   • Client Name : $user"
 echo -e "$COLOR1│${NC}   • Expired On  : $exp"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━ BY ━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "${GREEN}| \E[44;1;39m           • GRETONGERS VPN PREMIUM •          \E[0m|"
+echo -e "${GREEN}| \E[44;1;39m           • CROT VPN PREMIUM •          \E[0m|"
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
@@ -205,7 +204,7 @@ echo -e "$COLOR1│${NC}   • Client Name : $user"
 echo -e "$COLOR1│${NC}   • Expired On  : $exp"
 echo -e "$COLOR1└─────────────────────────────────────────────────┘${NC}"
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━ BY ━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "${GREEN}| \E[44;1;39m           • GRETONGERS VPN PREMIUM •          \E[0m|"
+echo -e "${GREEN}| \E[44;1;39m           • CROT VPN PREMIUM •          \E[0m|"
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo ""
 read -n 1 -s -r -p "   Press any key to back on menu"
