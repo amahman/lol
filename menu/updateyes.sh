@@ -2,7 +2,7 @@
 
 
 LocalVersion=$(cat /etc/version)
-version=$(curl -sS "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/versiupdate")
+version=$(curl -sS "https://raw.githubusercontent.com/amahman/lol/main/versiupdate")
 
 if [ "$LocalVersion" = "$version" ]; then
   echo
@@ -75,19 +75,19 @@ else
   rm -f /usr/bin/menu-trojan
   rm -f /usr/bin/menu-ss
   # Tambahkan perintah rm untuk file lainnya...
-wget -q -O /etc/version "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/versiupdate" && chmod +x /etc/version
+wget -q -O /etc/version "https://raw.githubusercontent.com/amahman/lol/main/versiupdate" && chmod +x /etc/version
   rm -f /usr/bin/menu
-wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/menu/menu.sh" && chmod 777 /usr/bin/menu
+wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/amahman/lol/main/menu/menu.sh" && chmod 777 /usr/bin/menu
   rm -f /usr/bin/menu-ssh
-  wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/menu/menu-ssh.sh" && chmod 777 /usr/bin/menu-ssh
+  wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/amahman/lol/main/menu/menu-ssh.sh" && chmod 777 /usr/bin/menu-ssh
   rm -f /usr/bin/menu-vless
-wget -q -O /usr/bin/menu-vless "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/menu/menu-vless.sh" && chmod 777 /usr/bin/menu-vless
+wget -q -O /usr/bin/menu-vless "https://raw.githubusercontent.com/amahman/lol/main/menu/menu-vless.sh" && chmod 777 /usr/bin/menu-vless
   rm -f /usr/bin/menu-vmess
-wget -q -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/menu/menu-vmess.sh" && chmod 777 /usr/bin/menu-vmess
+wget -q -O /usr/bin/menu-vmess "https://raw.githubusercontent.com/amahman/lol/main/menu/menu-vmess.sh" && chmod 777 /usr/bin/menu-vmess
   rm -f /usr/bin/menu-trojan
-wget -q -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/menu/menu-trojan.sh" && chmod 777 /usr/bin/menu-trojan
+wget -q -O /usr/bin/menu-trojan "https://raw.githubusercontent.com/amahman/lol/main/menu/menu-trojan.sh" && chmod 777 /usr/bin/menu-trojan
   rm -f /usr/bin/menu-ss
-wget -q -O /usr/bin/menu-ss "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/menu/menu-ss.sh" && chmod 777 /usr/bin/menu-ss
+wget -q -O /usr/bin/menu-ss "https://raw.githubusercontent.com/amahman/lol/main/menu/menu-ss.sh" && chmod 777 /usr/bin/menu-ss
 
 
 fi
