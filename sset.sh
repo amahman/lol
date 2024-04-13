@@ -1,5 +1,5 @@
 #!/bin/bash
-MYIP=$(curl -sS ipv4.icanhazip.com)
+MYIP=$(wget -qO- ipinfo.io/ip)
 red='\e[1;31m'
 green='\e[0;32m'
 yell='\e[1;33m'
@@ -20,7 +20,7 @@ exit 0
 fi
 }
 IZIN=$(curl -sS https://raw.githubusercontent.com/amahman/lol/main/ip  | awk '{print $4}' | grep $MYIP)
-if [[ $MYIP = $IZIN ]]; then
+if (wget -qO- ipinfo.io/ip); then
 echo "IZIN DI TERIMA!!"
 else
 echo "Akses di tolak!! Silakan Hubungi Admin";
