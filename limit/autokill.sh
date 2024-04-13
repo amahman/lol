@@ -1,5 +1,5 @@
 #!/bin/bash
-# Modifed By Gretongers Vpn Premium
+# Modifed By crot Vpn Premium
 # ==========================================
 # Color
 RED='\033[0;31m'
