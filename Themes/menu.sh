@@ -51,7 +51,7 @@ export Auther="XdrgVPN"
 
 # status
 rm -rf /root/status
-wget -q -O /root/status "https://raw.githubusercontent.com/arismaramar/ssset/master/statushariini"
+wget -q -O /root/status "https://raw.githubusercontent.com/amahman/lol/main/statushariini"
 
 
 # Getting
@@ -60,7 +60,7 @@ echo "memeriksa vps anda"
 sleep 0.5
 CEKEXPIRED () {
         today=$(date -d +1day +%Y -%m -%d)
-        Exp1=$(curl -sS https://raw.githubusercontent.com/arismaramar/ssset/master/gerung | grep $MYIP | awk '\''{print $3}'\'')
+        Exp1=$(curl -sS https://raw.githubusercontent.com/amahman/lol/main/ip | grep $MYIP | awk '\''{print $3}'\'')
         if [[ $today < $Exp1 ]]; then
         echo "status script aktif.."
         else
@@ -68,7 +68,7 @@ CEKEXPIRED () {
         exit 0
 fi
 }
-IZIN=$(curl -sS https://raw.githubusercontent.com/arismaramar/ssset/master/gerung | awk '\''{print $4}'\'' | grep $MYIP)
+IZIN=$(curl -sS https://raw.githubusercontent.com/amahman/lol/main/ip | awk '\''{print $4}'\'' | grep $MYIP)
 if [ $MYIP = $IZIN ]; then
 echo "IZIN DI TERIMA!!"
 CEKEXPIRED
@@ -91,8 +91,8 @@ persenmemori="$(echo "scale=2; $usmem*100/$tomem" | bc)"
 persencpu="$(echo "scale=2; $cpu1+$cpu2" | bc)"
 # // Exporting IP Address
 export MYIP=$( curl -s https://ipinfo.io/ip/ )
-Name=$(curl -sS https://raw.githubusercontent.com/arismaramar/ssset/master/gerung | grep $MYIP | awk '\''{print $2}'\'')
-Exp=$(curl -sS https://raw.githubusercontent.com/arismaramar/ssset/master/gerung | grep $MYIP | awk '\''{print $3}'\'')
+Name=$(curl -sS https://raw.githubusercontent.com/amahman/lol/main/ip | grep $MYIP | awk '\''{print $2}'\'')
+Exp=$(curl -sS https://raw.githubusercontent.com/amahman/lol/main/ip | grep $MYIP | awk '\''{print $3}'\'')
 
 # // nginx
 nginx=$( systemctl status nginx | grep Active | awk '\''{print $3}'\'' | sed '\''s/(//g'\'' | sed '\''s/)//g'\'' )
@@ -119,8 +119,8 @@ fi
 ttoday="$(vnstat | grep today | awk '\''{print $8" "substr ($9, 1, 3)}'\'' | head -1)"
 tmon="$(vnstat -m | grep `date +%G-%m` | awk '\''{print $8" "substr ($9, 1 ,3)}'\'' | head -1)"
 bot
-wget -q -O /usr/bin/lock "https://raw.githubusercontent.com/arismaramar/ssset/master/limit/user-lock.sh" && chmod +x /usr/bin/lock
-wget -q -O /usr/bin/unlock "https://raw.githubusercontent.com/arismaramar/ssset/master/limit/user-unlock.sh" && chmod +x /usr/bin/unlock
+wget -q -O /usr/bin/lock "https://raw.githubusercontent.com/amahman/lol/main/limit/user-lock.sh" && chmod +x /usr/bin/lock
+wget -q -O /usr/bin/unlock "https://raw.githubusercontent.com/amahman/lol/main/limit/user-unlock.sh" && chmod +x /usr/bin/unlock
 clear
 
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
