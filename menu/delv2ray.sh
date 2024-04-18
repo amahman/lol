@@ -60,6 +60,6 @@ echo "Username  : $user"
 
 echo "Expired   : $exp"
 echo  ============================================================
-echo           ANGUN Vpn Premium
+echo            Vpn Premium
 echo ============================================================
 
