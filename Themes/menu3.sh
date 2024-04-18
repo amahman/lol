@@ -52,7 +52,7 @@ export Auther=".geovpn"
 
 # status
 rm -rf /root/status
-wget -q -O /root/status "https://raw.githubusercontent.com/messiey/rocky/master/statushariini"
+wget -q -O /root/status "https://raw.githubusercontent.com/amahman/lol/master/statushariini"
 
 
 # Getting
@@ -61,7 +61,7 @@ echo "memeriksa vps anda"
 sleep 0.5
 CEKEXPIRED () {
         today=$(date -d +1day +%Y -%m -%d)
-        Exp1=$(curl -sS https://raw.githubusercontent.com/messiey/rocky/master/gerung | grep $MYIP | awk '{print $3}')
+        Exp1=$(curl -sS https://raw.githubusercontent.com/amahman/lol/master/gerung | grep $MYIP | awk '{print $3}')
         if [[ $today < $Exp1 ]]; then
         echo "status script aktif.."
         else
@@ -69,7 +69,7 @@ CEKEXPIRED () {
         exit 0
 fi
 }
-IZIN=$(curl -sS https://raw.githubusercontent.com/messiey/rocky/master/gerung | awk '{print $4}' | grep $MYIP)
+IZIN=$(curl -sS https://raw.githubusercontent.com/amahman/lol/master/gerung | awk '{print $4}' | grep $MYIP)
 if [ $MYIP = $IZIN ]; then
 echo "IZIN DI TERIMA!!"
 CEKEXPIRED
@@ -178,7 +178,7 @@ echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━�
 echo -e "\E[39;1;92m                   ⇱ SCRIPT PREMIUM ⇲                      \E[0m"
 echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "${RED}"
-figlet -f 3d "Gretongers Vpn Premium"
+figlet -f 3d " Vpn Premium"
 echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
 echo -e "\E[39;1;92m                   ⇱ SERVER INFORMATION ⇲                      \E[0m"
 echo -e "${YELLOW}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${NC}"
