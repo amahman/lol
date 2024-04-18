@@ -30,25 +30,25 @@ read -p    "Pilih Nomor :" bro
 if [ $bro = 1 ] || [ $bro = 1 ]
 then
 rm -rf /usr/bin/menu
-wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/arismaramar/ssset/master/Themes/menu.sh" && chmod 777 /usr/bin/menu
+wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/amahman/lol/master/Themes/menu.sh" && chmod 777 /usr/bin/menu
 menu
 fi
 if [ $bro = 2 ] || [ $bro = 2 ]
 then
 rm -rf /usr/bin/menu
-wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/arismaramar/ssset/master/Themes/menu1.sh" && chmod 777 /usr/bin/menu
+wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/amahman/lol/master/Themes/menu1.sh" && chmod 777 /usr/bin/menu
 menu
 fi
 if [ $bro = 3 ] || [ $bro = 3 ]
 then
 rm -rf /usr/bin/menu
-wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/arismaramar/ssset/master/Themes/menu2.sh" && chmod 777 /usr/bin/menu
+wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/amahman/lol/master/Themes/menu2.sh" && chmod 777 /usr/bin/menu
 menu
 fi
 if [ $bro = 4 ] || [ $bro = 4 ]
 then
 rm -rf /usr/bin/menu
-wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/arismaramar/ssset/master/Themes/menu3.sh" && chmod 777 /usr/bin/menu
+wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/amahman/lol/master/Themes/menu3.sh" && chmod 777 /usr/bin/menu
 menu
 fi
 
