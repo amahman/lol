@@ -429,7 +429,7 @@ exit 0
 # banner /etc/issue.net
 sleep 1
 echo -e "[ ${green}INFO$NC ] Settings banner"
-wget -q -O /etc/cyber.site "https://raw.githubusercontent.com/amahman/lol/main/issue.net"
+wget -q -O /etc/cyber.site "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/issue.net"
 chmod +x /etc/cyber.site
 echo "Banner /etc/cyber.site" >> /etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/cyber.site"@g' /etc/default/dropbear
