@@ -5,14 +5,14 @@ mkdir /var/lib/ssnvpn-pro/
 rm -f /usr/bin/menu-ssh
 
 
-wget -q -O /var/lib/ssnvpn-pro/ipvps.conf "https://raw.githubusercontent.com/amahman/lol/main/ipvps.conf"
-wger -q -O /usr/bin/tendang "https://raw.githubusercontent.com/amahman/lol/main/limit/tendang.sh"
-#wget -q -O /usr/bin/autokill "https://raw.githubusercontent.com/amahman/lol/main/limit/autokill.sh"
-wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/amahman/lol/main/menu/menu-ssh.sh"
-wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/amahman/lol/main/menu/restart.sh"
+wget -q -O /var/lib/ssnvpn-pro/ipvps.conf "https://raw.githubusercontent.com/arismaramar/ssset/master/ipvps.conf"
+wger -q -O /usr/bin/tendang "https://raw.githubusercontent.com/arismaramar/ssset/master/limit/tendang.sh"
+#wget -q -O /usr/bin/autokill "https://raw.githubusercontent.com/arismaramar/ssset/master/limit/autokill.sh"
+wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/arismaramar/ssset/master/menu/menu-ssh.sh"
+wget -q -O /usr/bin/restart "https://raw.githubusercontent.com/arismaramar/ssset/master/menu/restart.sh"
 chmod +x /usr/bin/restart
-wget -q -O /usr/bin/bot "https://raw.githubusercontent.com/amahman/lol/main/Finaleuy/bot.sh"
-wget -q -O /root/chat "https://raw.githubusercontent.com/amahman/lol/main/Finaleuy/chatid.sh"
+wget -q -O /usr/bin/bot "https://raw.githubusercontent.com/arismaramar/ssset/master/Finaleuy/bot.sh"
+wget -q -O /root/chat "https://raw.githubusercontent.com/arismaramar/ssset/master/Finaleuy/chatid.sh"
 chmod 777 /root/chat
 chmod 777 /usr/bin/bot
 
@@ -65,10 +65,10 @@ service cron restart
 #konfigurasi slowdns
 rm -rf /etc/slowdns
 mkdir -m 777 /etc/slowdns
-wget -q -O /etc/slowdns/server.key "https://raw.githubusercontent.com/amahman/lol/main/SLDNS/server.key"
-wget -q -O /etc/slowdns/server.pub "https://raw.githubusercontent.com/amahman/lol/main/SLDNS/server.pub"
-wget -q -O /etc/slowdns/sldns-server "https://raw.githubusercontent.com/amahman/lol/main/SLDNS/sldns-server"
-wget -q -O /etc/slowdns/sldns-client "https://raw.githubusercontent.com/amahman/lol/main/SLDNS/sldns-client"
+wget -q -O /etc/slowdns/server.key "https://raw.githubusercontent.com/arismaramar/ssset/master/SLDNS/server.key"
+wget -q -O /etc/slowdns/server.pub "https://raw.githubusercontent.com/arismaramar/ssset/master/SLDNS/server.pub"
+wget -q -O /etc/slowdns/sldns-server "https://raw.githubusercontent.com/arismaramar/ssset/master/SLDNS/sldns-server"
+wget -q -O /etc/slowdns/sldns-client "https://raw.githubusercontent.com/arismaramar/ssset/master/SLDNS/sldns-client"
 cd
 chmod +x /etc/slowdns/server.key
 chmod +x /etc/slowdns/server.pub
