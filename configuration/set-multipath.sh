@@ -21,7 +21,7 @@ echo "${RED}STOP NGINX"
 
 systemctl stop nginx
 rm -f /etc/nginx/conf.d/xray.conf
-wget -q -O /etc/nginx/conf.d/xray.conf "https://raw.githubusercontent.com/arismaramar/ssset/master/configuration/vmess.txt"
+wget -q -O /etc/nginx/conf.d/xray.conf "https://raw.githubusercontent.com/amahman/lol/master/configuration/vmess.txt"
 chmod +x /etc/nginx/conf.d/xray.conf
 
 
@@ -43,7 +43,7 @@ echo "${RED}STOP NGINX"
 
 systemctl stop nginx
 rm -f /etc/nginx/conf.d/xray.conf
-wget -q -O /etc/nginx/conf.d/xray.conf "https://raw.githubusercontent.com/arismaramar/ssset/master/configuration/vless.txt"
+wget -q -O /etc/nginx/conf.d/xray.conf "https://raw.githubusercontent.com/amahman/lol/master/configuration/vless.txt"
 chmod +x /etc/nginx/conf.d/xray.conf
 
 
@@ -66,7 +66,7 @@ echo "${RED}STOP NGINX"
 
 systemctl stop nginx
 rm -f /etc/nginx/conf.d/xray.conf
-wget -q -O /etc/nginx/conf.d/xray.conf "https://raw.githubusercontent.com/arismaramar/ssset/master/configuration/vless.txt"
+wget -q -O /etc/nginx/conf.d/xray.conf "https://raw.githubusercontent.com/amahman/lol/master/configuration/vless.txt"
 chmod +x /etc/nginx/conf.d/xray.conf
 
 
@@ -89,7 +89,7 @@ echo "${RED}STOP NGINX"
 
 systemctl stop nginx
 rm -f /etc/nginx/conf.d/xray.conf
-wget -q -O /etc/nginx/conf.d/xray.conf "https://raw.githubusercontent.com/arismaramar/ssset/master/configuration/vless.txt"
+wget -q -O /etc/nginx/conf.d/xray.conf "https://raw.githubusercontent.com/amahman/lol/master/configuration/vless.txt"
 chmod +x /etc/nginx/conf.d/xray.conf
 
 echo "${GREEN}START NGINX OK"
