@@ -1,4 +1,3 @@
-
 export RED='\033[0;31m'
 export GREEN='\033[0;32m'
 export YELLOW='\033[0;33m'
@@ -23,7 +22,7 @@ echo $chat_id > /root/id
 
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 
-echo -e "${LIGHT}           SCRIPT CREDIT BY ANGGUN VPN PREMIUIM"
+echo -e "${LIGHT}           SCRIPT CREDIT BY VPN PREMIUIM"
 
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 
