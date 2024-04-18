@@ -21,13 +21,13 @@ read -rp "input your chat id Telegram:" nenen
 echo "$nenen" >> /root/id
 
 cd /usr/bin
-wget -O mautobackup "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/backup/autobackup.sh"
-wget -O /usr/bin/mbackup "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/backup/backup.sh"
-wget -O /usr/bin/mrestore "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/backup/restore.sh"
+wget -O mautobackup "https://raw.githubusercontent.com/amahman/lol/master/backup/autobackup.sh"
+wget -O /usr/bin/mbackup "https://raw.githubusercontent.com/amahman/lol/master/backup/backup.sh"
+wget -O /usr/bin/mrestore "https://raw.githubusercontent.com/amahman/lol/master/backup/restore.sh"
 
 
 
-wget -O mlimitspeed "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/backup/limitspeed.sh"
+wget -O mlimitspeed "https://raw.githubusercontent.com/amahman/lol/master/backup/limitspeed.sh"
 chmod +x mautobackup
 chmod +x /usr/bin/mbackup
 chmod +x /usr/bin/mrestore
