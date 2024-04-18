@@ -5,27 +5,28 @@ green='\e[0;32m'
 yell='\e[1;33m'
 tyblue='\e[1;36m'
 NC='\e[0m'
-
-MYIP=$(wget -qO- ipinfo.io/ip);
-echo "memeriksa vps anda"
+echo -e "Memeriksa VPS Anda..."
 sleep 0.5
-CEKEXPIRED () {
-today=$(date -d +1day +%Y -%m -%d)
-Exp1=$(curl -sS https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/gerung  | grep $MYIP | awk '{print $3}')
-if [[ $today < $Exp1 ]]; then
-echo "status script aktif.."
-else
-echo "SCRIPT ANDA EXPIRED";
-exit 0
-fi
+
+CEKEXPIRED() {
+    today=$(date -d "+1 day" "+%Y-%m-%d")
+    Exp1=$(curl -sS https://raw.githubusercontent.com/amahman/lol/main/ip | grep $MYIP | awk '{print $3}')
+    if [[ $today < $Exp1 ]]; then
+        echo -e "Status script aktif."
+    else
+        echo -e "SCRIPT ANDA EXPIRED"
+        exit 0
+    fi
 }
-IZIN=$(curl -sS https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/gerung  | awk '{print $4}' | grep $MYIP)
-if [[ $MYIP = $IZIN ]]; then
+IZIN=$(curl -sS https://raw.githubusercontent.com/amahman/lol/main/ip | awk '{print $4}' | grep $MYIP)
+if [ $MYIP = $IZIN ]; then
 echo "IZIN DI TERIMA!!"
 else
-echo "Akses di tolak!! Silakan Hubungi Admin";
+echo "Akses di tolak!! Benget sia hurung!!";
 exit 0
 fi
+
+
 localip=$(hostname -I | cut -d\  -f1)
 hst=( `hostname` )
 dart=$(cat /etc/hosts | grep -w `hostname` | awk '{print $2}')
@@ -41,58 +42,76 @@ touch /etc/xray/domain
 touch /etc/v2ray/domain
 touch /etc/xray/scdomain
 touch /etc/v2ray/scdomain
+
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 >/dev/null 2>&1
 sysctl -w net.ipv6.conf.default.disable_ipv6=1 >/dev/null 2>&1
+
 apt install git curl -y >/dev/null 2>&1
 apt install python -y >/dev/null 2>&1
-echo -e "[ ${green}INFO${NC} ] Anda Telah Di Ijinkan, Untuk Menginstall Script Ini Tuan"
+echo -e "[ ${green}INFO${NC} ] Aight good ... installation file is ready"
 sleep 2
+
 mkdir -p /var/lib/scrz-prem >/dev/null 2>&1
 echo "IP=" >> /var/lib/scrz-prem/ipvps.conf
+
 sudo apt install vnstat
 sudo apt insta squid
-wget -q -O https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/tools.sh && chmod +x tools.sh && ./tools.sh
+wget -q -O https://raw.githubusercontent.com/amahman/lol/master/tools.sh && chmod +x tools.sh && ./tools.sh
 rm tools.sh
 clear
+
 clear
-echo "Masukan Domain CloudFlare Anda Yang Sudah Di Pointing Dengan Ip VPS Ini"
+echo "Add Domain for vmess/vless/trojan dll"
 echo " "
 read -rp "Input ur domain : " -e pp
-if [ -z $pp ]; then
-echo -e "
-Nothing input for domain!
-Then a random domain will be created"
-else
-echo "$pp" > /root/scdomain
-echo "$pp" > /etc/xray/scdomain
-echo "$pp" > /etc/xray/domain
-echo "$pp" > /etc/v2ray/domain
-echo $pp > /root/domain
-echo "IP=$pp" > /var/lib/scrz-prem/ipvps.conf
-fi
+    if [ -z $pp ]; then
+        echo -e "
+        Nothing input for domain!
+        Then a random domain will be created"
+    else
+        echo "$pp" > /root/scdomain
+	echo "$pp" > /etc/xray/scdomain
+	echo "$pp" > /etc/xray/domain
+	echo "$pp" > /etc/v2ray/domain
+	echo $pp > /root/domain
+        echo "IP=$pp" > /var/lib/scrz-prem/ipvps.conf
+    fi
+
 clear
+#install ssh ovpn
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green      Install SSH / WS / UDP              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 clear
-curl " https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/menu/ssh-vpn.sh" | bash
+curl "https://raw.githubusercontent.com/amahman/lol/master/menu/ssh-vpn.sh" | bash
 sleep 2
-wget https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/nginx-ssl.sh && chmod +x nginx-ssl.sh && ./nginx-ssl.sh
-wget -q -O demeling.sh https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/demeling.sh && chmod +x demeling.sh && ./demeling.sh
+wget https://raw.githubusercontent.com/amahman/lol/master/nginx-ssl.sh && chmod +x nginx-ssl.sh && ./nginx-ssl.sh
+wget -q -O demeling.sh https://raw.githubusercontent.com/amahman/lol/master/demeling.sh && chmod +x demeling.sh && ./demeling.sh
+
+
+
 cd
 mkdir -p /root/udp
+
+# change to time GMT+7
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+
+# install udp-custom
 echo downloading udp-custom
 wget -q --show-progress --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=12safUbdfI6kUEfb1MBRxlDfmV8NAaJmb' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=12safUbdfI6kUEfb1MBRxlDfmV8NAaJmb" -O /root/udp/udp-custom && rm -rf /tmp/cookies.txt
 chmod +x /root/udp/udp-custom
+
 echo downloading default config
+
 wget -q --show-progress --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1klXTiKGUd2Cs5cBnH3eK2Q1w50Yx3jbf' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1klXTiKGUd2Cs5cBnH3eK2Q1w50Yx3jbf" -O /root/udp/config.json && rm -rf /tmp/cookies.txt
+
 if [ -z "$1" ]; then
 cat <<EOF > /etc/systemd/system/udp-custom.service
 [Unit]
 Description=udp-custom by ©CyberVPN
+
 [Service]
 User=root
 Type=simple
@@ -100,6 +119,7 @@ ExecStart=/root/udp/udp-custom server
 WorkingDirectory=/root/udp/
 Restart=always
 RestartSec=2s
+
 [Install]
 WantedBy=default.target
 EOF
@@ -107,6 +127,7 @@ else
 cat <<EOF > /etc/systemd/system/udp-custom.service
 [Unit]
 Description=udp-custom by ©CyberVPN
+
 [Service]
 User=root
 Type=simple
@@ -114,26 +135,39 @@ ExecStart=/root/udp/udp-custom server -exclude $1
 WorkingDirectory=/root/udp/
 Restart=always
 RestartSec=2s
+
 [Install]
 WantedBy=default.target
 EOF
 fi
+
 echo start service udp-custom
 systemctl start udp-custom &>/dev/null
+
 echo enable service udp-custom
 systemctl enable udp-custom &>/dev/null
+
+
+
+#install ssh ovpn
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green      Install Websocket              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 clear
-curl "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/Insshws/insshws.sh" | bash
+curl "https://raw.githubusercontent.com/amahman/lol/master/Insshws/insshws.sh" | bash
+
+#exp
 cd /usr/bin
-wget -O xp "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/menu/xp.sh"
+wget -O xp "https://raw.githubusercontent.com/amahman/lol/master/menu/xp.sh"
 chmod +x xp
 sleep 1
-wget -q -O /usr/bin/notramcpu "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/Finaleuy/notramcpu" && chmod +x /usr/bin/notramcpu
+wget -q -O /usr/bin/notramcpu "https://raw.githubusercontent.com/amahman/lol/master/Finaleuy/notramcpu" && chmod +x /usr/bin/notramcpu
+
 cd
+#remove log 
+#wget -q -O /usr/bin/removelog "https://github.com/andristji/Xray-SSH/raw/main/log.sh" && chmod +x /usr/bin/removelog
+#sleep 1
 rm -f /root/ins-xray.sh
 rm -f /root/insshws.sh
 rm -f /root/xraymode.sh
@@ -142,50 +176,66 @@ echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━�
 echo -e "$green      Install ALL XRAY               $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
-curl "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/menu/insray.sh" | bash
+
+curl "https://raw.githubusercontent.com/amahman/lol/master/menu/insray.sh" | bash
 sleep 1
-curl "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/arca.sh" | bash
+
+curl "https://raw.githubusercontent.com/amahman/lol/master/arca.sh" | bash
 sleep 1
+#install slowdns
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green      Install slowdns               $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
-wget -q -O slowdns.sh https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/SLDNS/slowdns.sh && chmod +x slowdns.sh && ./slowdns.sh
+
+wget -q -O slowdns.sh https://raw.githubusercontent.com/amahman/lol/master/SLDNS/slowdns.sh && chmod +x slowdns.sh && ./slowdns.sh
+
+#cronjob
+#echo "30 * * * * root removelog" >> /etc/crontab
+
+#pemangkuvmessvless
 mkdir /root/akun
 mkdir /root/akun/vmess
 mkdir /root/akun/vless
 mkdir /root/akun/shadowsocks
 mkdir /root/akun/trojan
+
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green      Install IPSEC L2TP & SSTP               $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 1
-curl "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/ipsec/ipsec.sh" | bash
+
+curl "https://raw.githubusercontent.com/amahman/lol/master/ipsec/ipsec.sh" | bash
+
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green      Install OPENVPN             $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-wget "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/Insshws/vpn.sh" && bash vpn.sh && rm vpn.sh
+
+wget "https://raw.githubusercontent.com/amahman/lol/master/Insshws/vpn.sh" && bash vpn.sh && rm vpn.sh
 clear
 echo "Installing Bot Panel" | lolcat
 echo "Siapkan Token bot dan ID telegram mu"
-rm -rf bot.sh && wget https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/bot.sh && chmod 777 bot.sh && ./bot.sh && systemctl restart cybervpn
-USERID=1423578532
-KEY="5973249718:AAEQEcWIjxwTMylzckC1letVvxwSYRRNepU"
+rm -rf bot.sh && wget https://raw.githubusercontent.com/amahman/lol/master/botssh/bot.sh && chmod 777 bot.sh && ./bot.sh && systemctl restart cybervpn
+
+# pemberitahuan
+
+USERID=1423578589
+KEY="59732718:AAEQEcWIjxwTMylzckC1letVvxwSYRRNepU"
 TIMEOUT="10"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 DATE_EXEC="$(date "+%d %b %Y %H:%M")"
 TMPFILE='/tmp/ipinfo-$DATE_EXEC.txt'
 if [ -n "$SSH_CLIENT" ] && [ -z "$TMUX" ]; then
-IP=$(echo $SSH_CLIENT | awk '{print $1}')
-PORT=$(echo $SSH_CLIENT | awk '{print $3}')
-HOSTNAME=$(hostname -f)
-IPADDR=$(hostname -I | awk '{print $1}')
-curl http://ipinfo.io/$IP -s -o $TMPFILE
-CITY=$(cat $TMPFILE | sed -n 's/^  "city":[[:space:]]*//p' | sed 's/"//g')
-REGION=$(cat $TMPFILE | sed -n 's/^  "region":[[:space:]]*//p' | sed 's/"//g')
-COUNTRY=$(cat $TMPFILE | sed -n 's/^  "country":[[:space:]]*//p' | sed 's/"//g')
-ORG=$(cat $TMPFILE | sed -n 's/^  "org":[[:space:]]*//p' | sed 's/"//g')
-TEXT="
+	IP=$(echo $SSH_CLIENT | awk '{print $1}')
+	PORT=$(echo $SSH_CLIENT | awk '{print $3}')
+	HOSTNAME=$(hostname -f)
+	IPADDR=$(hostname -I | awk '{print $1}')
+	curl http://ipinfo.io/$IP -s -o $TMPFILE
+        CITY=$(cat $TMPFILE | sed -n 's/^  "city":[[:space:]]*//p' | sed 's/"//g')
+        REGION=$(cat $TMPFILE | sed -n 's/^  "region":[[:space:]]*//p' | sed 's/"//g')
+        COUNTRY=$(cat $TMPFILE | sed -n 's/^  "country":[[:space:]]*//p' | sed 's/"//g')
+        ORG=$(cat $TMPFILE | sed -n 's/^  "org":[[:space:]]*//p' | sed 's/"//g')
+	TEXT="
 ==============================
 🕊 Informasi instalasi script 🕊
 ==============================
@@ -199,9 +249,11 @@ TEXT="
 🎲KOTA      : $CITY
 🎲PROVINSI  : $REGION
 🎲PORT SSH. : $PORT"
-curl -s --max-time $TIMEOUT -d "chat_id=$USERID&disable_web_page_preview=1&text=$TEXT" $URL > /dev/null
-rm $TMPFILE
+	curl -s --max-time $TIMEOUT -d "chat_id=$USERID&disable_web_page_preview=1&text=$TEXT" $URL > /dev/null
+	rm $TMPFILE
 fi
+
+#install remove log
 echo "0 5 * * * root reboot" >> /etc/crontab
 echo "* * * * * root clog" >> /etc/crontab
 echo "59 * * * * root pkill 'menu'" >> /etc/crontab
@@ -211,6 +263,7 @@ service cron restart
 clear
 org=$(curl -s https://ipapi.co/org )
 echo "$org" > /root/.isp
+
 cat> /root/.profile << END
 if [ "$BASH" ]; then
 if [ -f ~/.bashrc ]; then
@@ -231,7 +284,9 @@ clear
 rm -f ins-xray.sh
 rm -f senmenu.sh
 rm -f setupku.sh
-echo "=====================-[  anggun Vpn Premium  ]-===================="
+rm -f xraymode.sh
+
+echo "=====================-[  Vpn Premium  ]-===================="
 echo ""
 echo "------------------------------------------------------------"
 echo ""
@@ -273,11 +328,11 @@ echo ""
 echo ""
 echo "------------------------------------------------------------"
 echo ""
-echo "===============-[ anggun Vpn Premium ]-==============="
+echo "===============-[ Autoscript Premium ]-==============="
 echo -e ""
 echo ""
 echo "" | tee -a log-install.txt
-echo "Installasi Autoscript Sukses"
+echo "ADIOS"
 sleep 1
 echo -ne "[ ${yell}WARNING${NC} ] Do you want to reboot now ? (y/n)? "
 read answer
