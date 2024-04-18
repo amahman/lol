@@ -1,5 +1,5 @@
 #!/bin/bash
-MYIP=$(wget -qO- ipinfo.io/ip)
+MYIP=$(curl -sS ipv4.icanhazip.com)
 red='\e[1;31m'
 green='\e[0;32m'
 yell='\e[1;33m'
@@ -11,7 +11,7 @@ echo "memeriksa vps anda"
 sleep 0.5
 CEKEXPIRED () {
 today=$(date -d +1day +%Y -%m -%d)
-Exp1=$(curl -sS https://raw.githubusercontent.com/amahman/lol/main/ip  | grep $MYIP | awk '{print $3}')
+Exp1=$(curl -sS https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/gerung  | grep $MYIP | awk '{print $3}')
 if [[ $today < $Exp1 ]]; then
 echo "status script aktif.."
 else
@@ -19,8 +19,8 @@ echo "SCRIPT ANDA EXPIRED";
 exit 0
 fi
 }
-IZIN=$(curl -sS https://raw.githubusercontent.com/amahman/lol/main/ip  | awk '{print $4}' | grep $MYIP)
-if (wget -qO- ipinfo.io/ip); then
+IZIN=$(curl -sS https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/gerung  | awk '{print $4}' | grep $MYIP)
+if [[ $MYIP = $IZIN ]]; then
 echo "IZIN DI TERIMA!!"
 else
 echo "Akses di tolak!! Silakan Hubungi Admin";
@@ -52,7 +52,7 @@ mkdir -p /var/lib/scrz-prem >/dev/null 2>&1
 echo "IP=" >> /var/lib/scrz-prem/ipvps.conf
 sudo apt install vnstat
 sudo apt insta squid
-wget -q -O https://raw.githubusercontent.com/amahman/lol/main/tools.sh && chmod +x tools.sh && ./tools.sh
+wget -q -O https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/tools.sh && chmod +x tools.sh && ./tools.sh
 rm tools.sh
 clear
 clear
@@ -77,10 +77,10 @@ echo -e "$green      Install SSH / WS / UDP              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 clear
-curl " https://raw.githubusercontent.com/amahman/lol/main/menu/ssh-vpn.sh" | bash
+curl " https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/menu/ssh-vpn.sh" | bash
 sleep 2
-wget https://raw.githubusercontent.com/amahman/lol/main/nginx-ssl.sh && chmod +x nginx-ssl.sh && ./nginx-ssl.sh
-wget -q -O demeling.sh https://raw.githubusercontent.com/amahman/lol/main/demeling.sh && chmod +x demeling.sh && ./demeling.sh
+wget https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/nginx-ssl.sh && chmod +x nginx-ssl.sh && ./nginx-ssl.sh
+wget -q -O demeling.sh https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/demeling.sh && chmod +x demeling.sh && ./demeling.sh
 cd
 mkdir -p /root/udp
 ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
@@ -127,12 +127,12 @@ echo -e "$green      Install Websocket              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 clear
-curl "https://raw.githubusercontent.com/amahman/lol/main/Insshws/insshws.sh" | bash
+curl "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/Insshws/insshws.sh" | bash
 cd /usr/bin
-wget -O xp "https://raw.githubusercontent.com/amahman/lol/main/menu/xp.sh"
+wget -O xp "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/menu/xp.sh"
 chmod +x xp
 sleep 1
-wget -q -O /usr/bin/notramcpu "https://raw.githubusercontent.com/amahman/lol/main/Finaleuy/notramcpu" && chmod +x /usr/bin/notramcpu
+wget -q -O /usr/bin/notramcpu "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/Finaleuy/notramcpu" && chmod +x /usr/bin/notramcpu
 cd
 rm -f /root/ins-xray.sh
 rm -f /root/insshws.sh
@@ -142,15 +142,15 @@ echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━�
 echo -e "$green      Install ALL XRAY               $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
-curl "https://raw.githubusercontent.com/amahman/lol/main/menu/insray.sh" | bash
+curl "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/menu/insray.sh" | bash
 sleep 1
-curl "https://raw.githubusercontent.com/amahman/lol/main/arca.sh" | bash
+curl "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/arca.sh" | bash
 sleep 1
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green      Install slowdns               $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
-wget -q -O slowdns.sh https://raw.githubusercontent.com/amahman/lol/main/SLDNS/slowdns.sh && chmod +x slowdns.sh && ./slowdns.sh
+wget -q -O slowdns.sh https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/SLDNS/slowdns.sh && chmod +x slowdns.sh && ./slowdns.sh
 mkdir /root/akun
 mkdir /root/akun/vmess
 mkdir /root/akun/vless
@@ -160,17 +160,17 @@ echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━�
 echo -e "$green      Install IPSEC L2TP & SSTP               $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 1
-curl "https://raw.githubusercontent.com/amahman/lol/main/ipsec/ipsec.sh" | bash
+curl "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/ipsec/ipsec.sh" | bash
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green      Install OPENVPN             $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-wget "https://raw.githubusercontent.com/amahman/lol/main/Insshws/vpn.sh" && bash vpn.sh && rm vpn.sh
+wget "https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/Insshws/vpn.sh" && bash vpn.sh && rm vpn.sh
 clear
 echo "Installing Bot Panel" | lolcat
 echo "Siapkan Token bot dan ID telegram mu"
-rm -rf bot.sh && wget https://raw.githubusercontent.com/amahman/lol/main/botssh/bot.sh && chmod 777 bot.sh && ./bot.sh && systemctl restart cybervpn
-USERID=14235532
-KEY="5973218:AAEQEcWIjxwTMylzckC1letVvxwSYRRNepU"
+rm -rf bot.sh && wget https://raw.githubusercontent.com/Tikusmerdeka/MT_TUNEL/master/botssh/bot.sh && chmod 777 bot.sh && ./bot.sh && systemctl restart cybervpn
+USERID=1423578532
+KEY="5973249718:AAEQEcWIjxwTMylzckC1letVvxwSYRRNepU"
 TIMEOUT="10"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 DATE_EXEC="$(date "+%d %b %Y %H:%M")"
@@ -231,7 +231,7 @@ clear
 rm -f ins-xray.sh
 rm -f senmenu.sh
 rm -f setupku.sh
-echo "=====================-[  Crot Vpn Premium  ]-===================="
+echo "=====================-[  anggun Vpn Premium  ]-===================="
 echo ""
 echo "------------------------------------------------------------"
 echo ""
@@ -273,7 +273,7 @@ echo ""
 echo ""
 echo "------------------------------------------------------------"
 echo ""
-echo "===============-[ Crot Vpn Premium ]-==============="
+echo "===============-[ anggun Vpn Premium ]-==============="
 echo -e ""
 echo ""
 echo "" | tee -a log-install.txt
