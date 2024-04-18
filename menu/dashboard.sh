@@ -74,14 +74,6 @@ if [ ! -e /tmp/vless ]; then
   mkdir -p /tmp/vless
 fi
 
-IZIN=$(curl -sS https://raw.githubusercontent.com/amahman/lol/master/gerung | awk '{print $4}' | grep $MYIP)
-if [ $MYIP = $IZIN ]; then
-echo "status akun masih aktif" 
-CEKEXPIRED 
-else
-echo -e "\e[31mSCRIPT ANDA EXPIRED!\e[0m"
-exit 0
-fi
 # status
 rm -rf /root/status
 wget -q -O /root/status "https://raw.githubusercontent.com/amahman/lol/master/statushariini" 
