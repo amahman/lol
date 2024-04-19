@@ -53,7 +53,7 @@ echo "sedang memverifkasi"
 MYIP=$(wget -qO- ipinfo.io/ip);
 CEKEXPIRED () {
     today=$(date -d +1day +%Y-%m-%d)
-    Exp1=$(curl -sS https://raw.githubusercontent.com/amahman/lol/master/gerung | grep $MYIP | awk '{print $3}')
+    Exp1=$(curl -sS https://raw.githubusercontent.com/messiey/rocky/master/gerung | grep $MYIP | awk '{print $3}')
     if [[ $today < $Exp1 ]]; then
 echo -e "verifikasi IP di terima"
     else
@@ -74,12 +74,20 @@ if [ ! -e /tmp/vless ]; then
   mkdir -p /tmp/vless
 fi
 
+IZIN=$(curl -sS https://raw.githubusercontent.com/messiey/rocky/master/gerung | awk '{print $4}' | grep $MYIP)
+if [ $MYIP = $IZIN ]; then
+echo "status akun masih aktif" 
+CEKEXPIRED 
+else
+echo -e "\e[31mSCRIPT ANDA EXPIRED!\e[0m"
+exit 0
+fi
 # status
 rm -rf /root/status
-wget -q -O /root/status "https://raw.githubusercontent.com/amahman/lol/master/statushariini" 
+wget -q -O /root/status "https://raw.githubusercontent.com/messiey/rocky/master/statushariini" 
 
 today=`date -d "0 days" +"%Y-%m-%d"`
-Exp2=$(curl -sS https://raw.githubusercontent.com/amahman/lol/master/gerung | grep $MYIP | awk '{print $3}')
+Exp2=$(curl -sS https://raw.githubusercontent.com/messiey/rocky/master/gerung | grep $MYIP | awk '{print $3}')
 if [ "$Exp2" == "lifetime" ]; then
     Exp2="2099-12-09"
 fi
@@ -90,6 +98,8 @@ left=$(((d1 - d2) / 86400))
 
 
  
+rm cybervpn.zip
+rm -rf cybervpn.zip
 
 datediff() {
     d1=$(date -d "$1" +%s)
@@ -110,12 +120,12 @@ cpu1="$(mpstat | awk '{print $4}' | head -4 |tail -n 1)"
 cpu2="$(mpstat | awk '{print $6}' | head -4 |tail -n 1)"
 
 #update
-wget -q -O updatsc.sh "https://raw.githubusercontent.com/amahman/lol/master/menu/updateyes.sh" && chmod +x updatsc.sh && ./updatsc.sh 
+wget -q -O updatsc.sh "https://raw.githubusercontent.com/messiey/rocky/master/menu/updateyes.sh" && chmod +x updatsc.sh && ./updatsc.sh 
 
 # // Exporting IP Address
 export MYIP=$( curl -s https://ipinfo.io/ip/ )
-Name=$(curl -sS https://raw.githubusercontent.com/amahman/lol/master/gerung | grep $MYIP | awk '{print $2}')
-Exp=$(curl -sS https://raw.githubusercontent.com/amahman/lol/master/gerung | grep $MYIP | awk '{print $3}')
+Name=$(curl -sS https://raw.githubusercontent.com/messiey/rocky/master/gerung | grep $MYIP | awk '{print $2}')
+Exp=$(curl -sS https://raw.githubusercontent.com/messiey/rocky/master/gerung | grep $MYIP | awk '{print $3}')
 
 # // nginx
 nginx=$( systemctl status nginx | grep Active | awk '{print $3}' | sed 's/(//g' | sed 's/)//g' )
@@ -176,7 +186,7 @@ bot
 clear
 
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "${GREEN}| \E[44;1;39m    °VPN PREMIUIM SCRIPT°        \E[0m|"
+echo -e "${GREEN}| \E[44;1;39m    °GRETONGERS VPN PREMIUIM SCRIPT°        \E[0m|"
 echo -e "${GREEN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "□ Server Uptime       = $( uptime -p  | cut -d " " -f 2-10000 ) "
  
@@ -232,7 +242,7 @@ echo -e "${GREEN}┌────────────────────
 echo -e "${GREEN}│ ${BOLD}${LIGHT}Client    = $Name                           ${NC}"
 echo -e "${GREEN}│ ${BOLD}${LIGHT}Expired   = $Exp                           ${NC}"
 echo -e "${GREEN}│ ${BOLD}${LIGHT}remaining = ${YELLOW}$left Days                          ${NC}"
-echo -e "${GREEN}│ ${BOLD}${LIGHT}Developer = VPN PREMIUIM💯                         ${NC}"
+echo -e "${GREEN}│ ${BOLD}${LIGHT}Developer = GRETONGERS VPN PREMIUIM💯                         ${NC}"
 echo -e "${GREEN}│ ${BOLD}${LIGHT}Version   = 7.0.0 LTS                         ${NC}"
 
 echo -e "${GREEN}└──────────────────────────────────────────────────┘${NC}"
